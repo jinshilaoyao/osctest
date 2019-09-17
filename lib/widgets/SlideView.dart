@@ -56,16 +56,32 @@ class _SlideViewState extends State<SlideView>
         var title = item['title'];
         var detailUrl = item['detailUrl'];
 
-        item.add(GestureDetector(
+        items.add(GestureDetector(
           onTap: (){
             Navigator.of(context).push(MaterialPageRoute(
               builder: (ctx) => NewsDetailpage(id: detailUrl)
             ));
           },
+          child: Stack(
+            children: <Widget>[
+              Image.network(imgUrl,width: MediaQuery.of(context).size.width, fit:BoxFit.cover),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                color: Color(0x50000000),
+                child: Padding(
+                  padding: EdgeInsets.all(6.0),
+                  child: Text(title, style:TextStyle(color:Colors.white,fontSize:15.0)),
+                ),
+              )
+            ],
+          ),
         ));
       }
     }
 
-    return Container();
+    return TabBarView(
+      controller: tabController,
+      children: items,
+    );
   }
 }

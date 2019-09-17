@@ -91,7 +91,7 @@ class _MyOscClientState extends State<MyOscClient> {
               style: TextStyle(color: Colors.white)),
           iconTheme: IconThemeData(color: Colors.white),
         ),
-        body: Text("data"),
+        body: _body,
         bottomNavigationBar: CupertinoTabBar(
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: getTabIcon(0), title: getTabTitle(0)),
