@@ -6,6 +6,7 @@ import './pages/NewsListPage.dart';
 import './pages/TweetsListPage.dart';
 import './pages/DiscoveryPage.dart';
 import './pages/MyInfoPage.dart';
+import './util/ThemeUtils.dart';
 
 void main() => runApp(MyOscClient());
 
@@ -18,7 +19,7 @@ class _MyOscClientState extends State<MyOscClient> {
   final appBarTitles = ['资讯', '动弹', '发现', '我的'];
   final tabTextStyleSelected = TextStyle(color: const Color(0xff63ca6c));
   final tabTextStyleNormal = TextStyle(color: const Color(0xff969696));
-  Color themeColor = Colors.red; //ThemeUtils.currentColorTheme;
+  Color themeColor = ThemeUtils.currentColorTheme;
   int _tabIndex = 0;
 
   var tabImages;
