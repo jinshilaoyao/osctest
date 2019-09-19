@@ -138,6 +138,25 @@ class _NewLoginPageState extends State<NewLoginPage> {
             Center(child: Text("请使用OSC帐号密码登录")),
             Container(
               height: 20,
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text("userName:"),
+                Expanded(
+                  child: TextField(
+                    controller: usernameCtrl,
+                    decoration: InputDecoration(
+                      hintText: "OSC帐号/注册邮箱",
+                      hintStyle: TextStyle(color: Color(0xff808080)),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(6.0))
+                      ),
+                      contentPadding: EdgeInsets.all(10)
+                    ),
+                  ),
+                )
+              ],
             )
           ],
         ),
